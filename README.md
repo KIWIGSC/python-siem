@@ -19,9 +19,6 @@ Mini SIEM développé en Python avec FastAPI.
 - HTML/CSS/JavaScript
 - JSON
 
-## Dashboard
-
-![Dashboard](screenshots/dashboard.png)
 
 ## Installation
 
