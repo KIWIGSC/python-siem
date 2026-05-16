@@ -1,0 +1,170 @@
+[
+    {
+        "timestamp": "2026-05-14 10:01:33",
+        "rule": "external_ip",
+        "ip": "45.67.89.10",
+        "score": 20,
+        "level": "LOW",
+        "message": "SUSPICIOUS EXTERNAL IP : 45.67.89.10"
+    },
+    {
+        "timestamp": "2026-05-14 10:01:35",
+        "rule": "external_ip",
+        "ip": "45.67.89.10",
+        "score": 40,
+        "level": "LOW",
+        "message": "SUSPICIOUS EXTERNAL IP : 45.67.89.10"
+    },
+    {
+        "timestamp": "2026-05-14 10:01:37",
+        "rule": "external_ip",
+        "ip": "45.67.89.10",
+        "score": 60,
+        "level": "MEDIUM",
+        "message": "SUSPICIOUS EXTERNAL IP : 45.67.89.10"
+    },
+    {
+        "timestamp": "2026-05-14 10:08:11",
+        "rule": "external_ip",
+        "ip": "88.12.44.21",
+        "score": 20,
+        "level": "LOW",
+        "message": "SUSPICIOUS EXTERNAL IP : 88.12.44.21"
+    },
+    {
+        "timestamp": "2026-05-14 02:14:12",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 20,
+        "level": "LOW",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 02:14:12",
+        "rule": "suspicious_hour",
+        "ip": "212.44.12.8",
+        "score": 50,
+        "level": "MEDIUM",
+        "message": "SUSPICIOUS LOGIN HOUR (2:00)"
+    },
+    {
+        "timestamp": "2026-05-14 02:15:33",
+        "rule": "external_ip",
+        "ip": "45.67.89.10",
+        "score": 80,
+        "level": "MEDIUM",
+        "message": "SUSPICIOUS EXTERNAL IP : 45.67.89.10"
+    },
+    {
+        "timestamp": "2026-05-14 02:14:12",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 70,
+        "level": "MEDIUM",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 02:14:12",
+        "rule": "suspicious_hour",
+        "ip": "212.44.12.8",
+        "score": 100,
+        "level": "HIGH",
+        "message": "SUSPICIOUS LOGIN HOUR (2:00)"
+    },
+    {
+        "timestamp": "2026-05-14 14:22:11",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 120,
+        "level": "HIGH",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 140,
+        "level": "HIGH",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 160,
+        "level": "HIGH",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 180,
+        "level": "HIGH",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 200,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 220,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:00",
+        "rule": "brute_force",
+        "ip": "212.44.12.8",
+        "score": 260,
+        "level": "CRITICAL",
+        "message": "BRUTE FORCE DETECTED FROM 212.44.12.8 (5 attempts in 30s)"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:05",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 280,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:05",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 300,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:05",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 320,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:05",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 340,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    },
+    {
+        "timestamp": "2026-05-14 14:01:05",
+        "rule": "external_ip",
+        "ip": "212.44.12.8",
+        "score": 360,
+        "level": "CRITICAL",
+        "message": "SUSPICIOUS EXTERNAL IP : 212.44.12.8"
+    }
+]

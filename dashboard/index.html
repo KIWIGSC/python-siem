@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini SIEM Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #111;
+            color: white;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        .LOW { color: lightgreen; }
+        .MEDIUM { color: orange; }
+        .HIGH { color: red; }
+        .CRITICAL {
+            color: crimson;
+            font-weight: bold;
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #161616;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 32px;
+            color: cyan;
+        }
+
+        .card p {
+            margin-top: 10px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mini SIEM Dashboard</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <h2 id="total-alerts">0</h2>
+            <p>Total Alerts</p>
+        </div>
+
+        <div class="card">
+            <h2 id="critical-alerts">0</h2>
+            <p>Critical Alerts</p>
+        </div>
+
+        <div class="card">
+            <h2 id="dangerous-ip">N/A</h2>
+            <p>Most Dangerous IP</p>
+        </div>
+
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Rule</th>
+                <th>IP</th>
+                <th>Level</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+
+        <tbody id="alerts-table"></tbody>
+    </table>
+
+    <script>
+
+        async function loadAlerts() {
+
+            const response = await fetch("/alerts");
+            const alerts = await response.json();
+
+            const table = document.getElementById("alerts-table");
+
+            table.innerHTML = "";
+
+            let criticalCount = 0;
+
+            let ipCounter = {};
+
+            alerts.forEach(alert => {
+
+                if (alert.level === "CRITICAL") {
+                    criticalCount++;
+                }
+
+                if (!ipCounter[alert.ip]) {
+                    ipCounter[alert.ip] = 0;
+                }
+
+                ipCounter[alert.ip]++;
+
+                const row = `
+                    <tr class="${alert.level}">
+                        <td>${alert.timestamp}</td>
+                        <td>${alert.rule}</td>
+                        <td>${alert.ip}</td>
+                        <td>${alert.level}</td>
+                        <td>${alert.message}</td>
+                    </tr>
+                `;
+
+                table.innerHTML += row;
+            });
+
+            document.getElementById("total-alerts").innerText = alerts.length;
+
+            document.getElementById("critical-alerts").innerText = criticalCount;
+
+            let mostDangerousIP = "N/A";
+            let maxCount = 0;
+
+            for (const ip in ipCounter) {
+
+                if (ipCounter[ip] > maxCount) {
+                    maxCount = ipCounter[ip];
+                    mostDangerousIP = ip;
+                }
+            }
+
+            document.getElementById("dangerous-ip").innerText = mostDangerousIP;
+        }
+
+        loadAlerts();
+
+        setInterval(loadAlerts, 5000);
+
+    </script>
+
+</body>
+</html>
